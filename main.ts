@@ -41,6 +41,9 @@ function checkReview(text: string): void {
   if (!text.startsWith("★☆☆☆☆ ")) {
     fail("review must open with the one-star glyph ★☆☆☆☆");
   }
+  if (!text.includes("One star:")) {
+    fail("review must state its one-star reason explicitly");
+  }
   if (text.trim() !== text) {
     fail("leading or trailing whitespace");
   }
